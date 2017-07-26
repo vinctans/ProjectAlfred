@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import GridContainer from './GridContainer.js';
-import SprintSelector from './SprintSelector.js';
+import { Checkbox } from 'semantic-ui-react';
 
 class WorkItemOverview extends Component {
   render() {
@@ -20,7 +19,7 @@ class WorkItem extends Component {
   render() {
     return (
       <div>
-        {this.props.content}
+      <Checkbox label={this.props.content} />
       </div>
     );
   }

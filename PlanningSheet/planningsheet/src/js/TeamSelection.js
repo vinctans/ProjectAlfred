@@ -28,10 +28,12 @@ class TeamSelection extends Component {
                     
                     <h3>Planning made easy.</h3>
 
-                    <Dropdown placeholder='Select Team' fluid selection options={this.props.teamList}/>
+                    <Dropdown placeholder='Select Team' fluid selection options={this.props.teamList}
+                    />
 
                     </div> </form>
-                <Button animated inverted color='blue'>
+
+                    <Button animated inverted color='blue' onClick={this.props.onSelectTeam}>
                             <Button.Content visible>Plan Now</Button.Content>
                             <Button.Content hidden>
                                 <Icon name='right arrow'/>

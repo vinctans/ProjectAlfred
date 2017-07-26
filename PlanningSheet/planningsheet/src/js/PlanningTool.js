@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import GridContainer from './GridContainer.js';
-import SprintSelector from './SprintSelector.js';
 import WorkItemOverview from './WorkItemOverview.js';
 import TeamSelection from './TeamSelection.js';
 import {Dropdown} from 'semantic-ui-react';
@@ -9,41 +7,39 @@ class PlanningTool extends Component {
   constructor() {
     super();
     this.state = {
-      // iterationPaths: [   'sprint 3031', 'sprint 3032', 'sprint 3033' ], pbiList:
-      // [1, 2, 3],
-      // teamList: [
-      //   {
-      //     text: 'LocNL',
-      //     value: 'Jenny Hess'
-      //   },
-      //   {
-      //     text: 'LocNL',
-      //     value: 'Jenny Hess'
-      //   },
-      //   {
-      //     text: 'LocNL',
-      //     value: 'Jenny Hess'
-      //   }
-      // ],
+      hasSelectedTeam: true,
       teamList:[{text: 'LocNL', value: '1'},
-      {text: 'LocDE', value: '2'},
-      {text: 'LocBE', value: '3'}],
-      workItemList: ["PBI 123: do something", "PBI 345: do another thing"]
+                {text: 'LocDE', value: '2'},
+                {text: 'LocBE', value: '3'}],
+      workItemList: ["PBI NL-123: eat ice cream",
+                    "PBI DE-123: eat chocolate",
+                    "PBI NL-123: eat macaroons",
+                    "PBI NL-123: eat ramen"]
     }
+    this.onSelectTeam = this.onSelectTeam.bind(this);
+  }
+
+  onSelectTeam(){
+    this.setState({
+      hasSelectedTeam: false,
+    });
   }
 
   render() {
+
+    if(this.state.hasSelectedTeam){
+       var currentPage = <TeamSelection teamList={this.state.teamList} onSelectTeam={this.onSelectTeam}/>;
+    } else {
+      currentPage = <WorkItemOverview workItemList={this.state.workItemList}/>;
+    }
+
     return (
-      <div className="App">
-        <TeamSelection teamList={this.state.teamList}/>
-        <WorkItemOverview workItemList={this.state.workItemList}/>
+      <div>
+        {currentPage}
       </div>
     );
   }
-  // <SprintSelector           iterationPaths={this.state.iterationPaths}
-  // />         <GridContainer pbiList={this.state.pbiList}/> renderGrid() {
-  // this.setState({     pbiList: [8,9,10]   }); }
-
+  
 }
 
 export default PlanningTool;
