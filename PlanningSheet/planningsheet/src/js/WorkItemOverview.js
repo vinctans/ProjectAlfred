@@ -8,15 +8,20 @@ class WorkItemOverview extends Component {
       .workItemList
       .map((workItem) => <WorkItem content={workItem}/>);
     
-      const planButton = <Button animated inverted color='blue' onClick={this.props.onClickPlan}>
-          <Button.Content visible>Select & Plan Your PBIs</Button.Content>
-          <Button.Content hidden>
-            Let's Go! <Icon name='space shuttle'/>
-          </Button.Content>
-        </Button>;
+    const planButton = <Button animated inverted color='blue' onClick={this.props.onClickPlan}>
+        <Button.Content visible>Select & Plan Your PBIs</Button.Content>
+        <Button.Content hidden>
+          Let's Go! <Icon name='space shuttle'/>
+        </Button.Content>
+      </Button>;
+
+    const backButton = <Button inverted color='red' onClick={this.props.onBackToTeamSelect}>
+        <Icon name='arrow left'/>Back
+      </Button>;
 
     return (
       <div>
+        {backButton}
         {planButton}
         <br />
         <br />

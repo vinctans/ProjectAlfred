@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import WorkItemOverview from './WorkItemOverview.js';
 import TeamSelection from './TeamSelection.js';
+import SprintPlanningSheet from './SprintPlanningSheet.js';
 
 class PlanningTool extends Component {
   constructor() {
@@ -16,29 +17,47 @@ class PlanningTool extends Component {
       workItemList: ["PBI NL-123: eat ice cream",
                     "PBI DE-123: eat chocolate",
                     "PBI NL-123: eat macaroons",
-                    "PBI NL-123: eat ramen"]
+                    "PBI NL-123: eat ramen"],
+      currentView: 'teamSelect'
     }
     this.onSelectTeam = this.onSelectTeam.bind(this);
     // this.getWorkItems = this.getWorkItems.bind(this);
     this.onClickPlan = this.onClickPlan.bind(this);
-    
+    this.getCurrentPage = this.getCurrentPage.bind(this);
+    this.onBackToTeamSelect = this.onBackToTeamSelect.bind(this);
   }
 
   onClickPlan(){
-    alert('todo: render plan (page 3)');
+    this.setState({
+      currentView: 'sprintPlanningSheet'
+    });
+    // alert('todo: render plan (page 3)');
+  }
+
+  onBackToTeamSelect(){
+    this.setState({
+      currentView: 'teamSelect'
+    });
   }
 
   // getWorkItems() {
   //   var jsonResult;
   //   const main = this;
 
-  //   //https://tfs.eu.exactsoftware.com:8088/tfs/EUCollection/ExactOnline/_apis/wit/wiql/0a7d7097-1396-401b-82dc-bc4fcfcb153c
-  //   fetch('https://api.themoviedb.org/3/search/movie?api_key=ba89fc9c98f5ea1bacb905d52416e52c&language=en-US&page=1&include_adult=false&query=' + 'wonder').then(function (response) {
-  //     var json=JSON.stringify(response);
-  //     console.log(json+ ' json length '+json.length);
+  //   //
+  //   fetch('https://tfs.eu.exactsoftware.com:8088/tfs/EUCollection/ExactOnline/_apis/wit/wiql/0a7d7097-1396-401b-82dc-bc4fcfcb153c')
+  //   .then(function (response) {
+  //     // var info = eval('(' + response + ')');
+
+  //     var jsonResponse=JSON.stringify(response);
+  //     // var jsonInfo=JSON.stringify(info);
       
-  //     json=JSON.parse(json);
-  //     console.log(json);
+  //     console.log('json response '+jsonResponse);
+  //     // console.log('json info '+jsonInfo);
+      
+      
+  //     // json=JSON.parse(json);
+  //     // console.log(json);
       
       
   //     return response.json();
@@ -66,20 +85,34 @@ class PlanningTool extends Component {
     // this.getWorkItems();
     this.setState({
       hasSelectedTeam: false,
+      currentView: 'workItemOverview'
     });
+  }
+  
+  getCurrentPage(){
+    switch(this.state.currentView){
+      case 'teamSelect': return <TeamSelection teamList={this.state.teamList} onSelectTeam={this.onSelectTeam}/>;
+                          break;
+      case 'workItemOverview': return <WorkItemOverview workItemList={this.state.workItemList}
+      onClickPlan={this.onClickPlan} onBackToTeamSelect={this.onBackToTeamSelect}/>;
+                          break;
+      case 'sprintPlanningSheet': return <SprintPlanningSheet />;
+                          break;                                  
+    }
   }
 
   render() {
 
-    if(this.state.hasSelectedTeam){
-       var currentPage = <TeamSelection teamList={this.state.teamList} onSelectTeam={this.onSelectTeam}/>;
-    } else {
-      currentPage = <WorkItemOverview workItemList={this.state.workItemList} onClickPlan={this.onClickPlan}/>;
-    }
+    // if(this.state.hasSelectedTeam){
+    //    var currentPage = <TeamSelection teamList={this.state.teamList} onSelectTeam={this.onSelectTeam}/>;
+    // } else {
+    //   currentPage = <WorkItemOverview workItemList={this.state.workItemList} onClickPlan={this.onClickPlan}/>;
+    // }
 
     return (
       <div>
-        {currentPage}
+      {this.getCurrentPage()}
+        
       </div>
     );
   }
