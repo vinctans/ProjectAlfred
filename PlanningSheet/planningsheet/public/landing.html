@@ -1,20 +1,75 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    
+    <style>
+        .centerAlign {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .landingCover {
+            display: table;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url("backgroundImage.jpg") no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $('.ui.dropdown')
+            .dropdown()
+            ;
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
     <title>Landing Page</title>
-  </head>
-  <body>
-    <div id="root">
-        <button class="ui button">Follow</button>
+</head>
+
+<body>
+    <div class="landingCover"></div>
+    <div id="mainForm" class="centerAlign">
+        <img src="ExactLogo.png" style="padding-bottom: 20px; max-height: 70px;">
+        <img src="PlanningToolLogo.png" style="padding-bottom: 20px; height: 70px;">
+        <form class="ui large form">
+            <div class="ui stacked segment" style="text-align:center; width:500px; max-width:80vw;">
+                <h3>Planning made easy.</h3>
+                <div class="field ui dropdown fluid selection">
+                    <input type="hidden" name="team">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Team</div>
+                    <div class="menu">
+                        <div class="item" data-value="nl"><i class="nl flag"></i>Localization NL</div>
+                        <div class="item" data-value="be"><i class="be flag"></i>Localization BE</div>
+                        <div class="item" data-value="uk"><i class="uk flag"></i>Localization UK</div>
+                        <div class="item" data-value="de"><i class="de flag"></i>Localization DE</div>
+                        <div class="item" data-value="fr"><i class="fr flag"></i>Localization FR</div>
+                        <div class="item" data-value="es"><i class="es flag"></i>Localization ES</div>
+                    </div>
+                </div>
+                <button class="field ui large inverted blue button">Plan Now</button>
+            </div>
+        </form>
     </div>
-  </body>
+</body>
+
 </html>
