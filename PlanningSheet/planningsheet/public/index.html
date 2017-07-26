@@ -9,9 +9,32 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-<<<<<<< HEAD
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <style>
+    .centerAlign {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .landingCover {
+      display: table;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: url("backgroundImage.jpg") no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+    }
+  </style>
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -28,7 +51,8 @@
     <title>Planning Tool</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="landingCover"></div>
+    <div id="root" class="centerAlign"></div>
     <!--
 =======
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
