@@ -14,10 +14,10 @@ class PlanningTool extends Component {
                 {text: 'Localization Spain', value: '4', flag: 'es'},
                 {text: 'Localization France', value: '5', flag: 'fr'},
                 {text: 'Localization United Kingdom', value: '6', flag: 'gb'}],
-      workItemList: ["PBI NL-123: eat ice cream",
-                    "PBI DE-123: eat chocolate",
-                    "PBI NL-123: eat macaroons",
-                    "PBI NL-123: eat ramen"]
+      workItemList: [{pbiNumber: '721545', title:'Create calendar management', assignedTo: 'Wendy Kong Wei Zhen', status: 'In Sprint', description: 'This PBI is to create a calendar management using React'},
+                    {pbiNumber: '845125', title:'Enhance REST API selection', assignedTo: 'Vincent Ansari', status: 'In Sprint', description: 'REST API filtering is to be amended'},
+                    {pbiNumber: '846213', title:'Advanced planning prioritization', assignedTo: 'Chat Ming Yoon', status: 'In Sprint', description: 'PBI priority will be prioritized using advanced predictive mechanism'},
+                    {pbiNumber: '989654', title:'Assign TFS PBI from PlanningTool', assignedTo: 'Mei Pheng Lau', status: 'In Sprint', description: 'User can directy assign someone to a PBI in TFS from PlanningTool'}]
     }
     this.onSelectTeam = this.onSelectTeam.bind(this);
     this.getWorkItems = this.getWorkItems.bind(this);
