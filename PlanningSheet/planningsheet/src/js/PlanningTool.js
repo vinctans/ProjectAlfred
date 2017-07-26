@@ -1,24 +1,37 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import GridContainer from './GridContainer.js';
-import Dropdown from './Dropdown.js';
+import SprintSelector from './SprintSelector.js';
+import 'semantic-ui-react';
 
 class PlanningTool extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state ={
-      iterationPath: '3031',
-      pbiList: [1,2,3]
+    this.state = {
+      iterationPaths: [
+        'sprint 3031', 'sprint 3032', 'sprint 3033'
+      ],
+      pbiList: [1, 2, 3]
     }
+    this.renderGrid.bind(this);
   }
 
   render() {
     return (
       <div className="App">
-        <Dropdown iterationPath={this.state.iterationPath}/>
+        <SprintSelector
+          iterationPaths={this.state.iterationPaths}
+          onClick={()=> alert('clicking')}/>
         <GridContainer pbiList={this.state.pbiList}/>
       </div>
     );
   }
+
+  renderGrid() {
+    this.setState({
+      pbiList: [8,9,10]
+    });
+  }
+
 }
 
 export default PlanningTool;
