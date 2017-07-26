@@ -20,7 +20,7 @@ class TeamSelection extends Component {
                 <form class="ui large form">
                     <Segment raised>
                         <h3>Planning made easy.</h3>
-                        <Dropdown placeholder='Select Team' fluid selection options={this.props.teamList} />
+                        <Dropdown placeholder='Select Team' fluid search selection options={this.props.teamList} />
                         <br/>
                         <Button animated inverted color='blue'>
                             <Button.Content visible>Plan Now</Button.Content>
