@@ -11,20 +11,23 @@ class PlanningTool extends Component {
     this.state = {
       // iterationPaths: [   'sprint 3031', 'sprint 3032', 'sprint 3033' ], pbiList:
       // [1, 2, 3],
-      teamList: [
-        {
-          text: 'LocNL',
-          value: 'Jenny Hess'
-        },
-        {
-          text: 'LocNL',
-          value: 'Jenny Hess'
-        },
-        {
-          text: 'LocNL',
-          value: 'Jenny Hess'
-        }
-      ],
+      // teamList: [
+      //   {
+      //     text: 'LocNL',
+      //     value: 'Jenny Hess'
+      //   },
+      //   {
+      //     text: 'LocNL',
+      //     value: 'Jenny Hess'
+      //   },
+      //   {
+      //     text: 'LocNL',
+      //     value: 'Jenny Hess'
+      //   }
+      // ],
+      teamList:[{text: 'LocNL', value: '1'},
+      {text: 'LocDE', value: '2'},
+      {text: 'LocBE', value: '3'}],
       workItemList: ["PBI 123: do something", "PBI 345: do another thing"]
     }
   }
