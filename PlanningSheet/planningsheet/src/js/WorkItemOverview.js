@@ -31,12 +31,12 @@ class WorkItem extends Component {
     return (
       <div>
         <Segment raised style={{ width: '800px', maxWidth: '90vw', margin: '10px' }}>
-          <Grid columns={3}>
+          <Grid stackable columns={3}>
             <Grid.Row>
-              <Grid.Column width={1} style={{ textAlign: 'center' }}>
+              <Grid.Column width={1}>
                 <Checkbox key={this.props.content.pbiNumber} />
               </Grid.Column>
-              <Grid.Column width={2} style={{ textAlign: 'center' }}>
+              <Grid.Column width={2}>
                 <Label key={this.props.content.pbiNumber} size='large' color='blue'>
                   {this.props.content.pbiNumber}
                 </Label>
