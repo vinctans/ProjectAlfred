@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Dropdown, Item, Icon, Segment } from 'semantic-ui-react';
+import { Button, Dropdown, Icon, Segment } from 'semantic-ui-react';
 
 class TeamSelection extends Component {
     render() {
@@ -17,7 +17,7 @@ class TeamSelection extends Component {
                        paddingBottom: '20px',
                         height: '70px'
                     }} />
-                <form class="ui large form">
+                <form className="ui large form">
                     <Segment raised>
                         <h3>Planning made easy.</h3>
                         <Dropdown placeholder='Select Team' fluid search selection options={this.props.teamList} />
