@@ -5,7 +5,7 @@ class TeamSelection extends Component {
     render() {
         return (
             <div>
-             <img
+                <img
                     src="ExactLogo.png"
                     style={{
                         paddingBottom: '20px',
@@ -14,14 +14,14 @@ class TeamSelection extends Component {
                 <img
                     src="PlanningToolLogo.png"
                     style={{
-                       paddingBottom: '20px',
+                        paddingBottom: '20px',
                         height: '70px'
                     }} />
-                <form className="ui large form">
-                    <Segment raised>
+                <form class="ui large form">
+                    <Segment raised style={{ width: '500px', maxWidth: '80vw' }}>
                         <h3>Planning made easy.</h3>
                         <Dropdown placeholder='Select Team' fluid search selection options={this.props.teamList} />
-                        <br/>
+                        <br />
                         <Button animated inverted color='blue' onClick={this.props.onSelectTeam}>
                             <Button.Content visible>Plan Now</Button.Content>
                             <Button.Content hidden>
