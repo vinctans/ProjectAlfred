@@ -8,9 +8,12 @@ class PlanningTool extends Component {
     super();
     this.state = {
       hasSelectedTeam: true,
-      teamList:[{text: 'LocNL', value: '1'},
-                {text: 'LocDE', value: '2'},
-                {text: 'LocBE', value: '3'}],
+      teamList:[{text: 'Localization Netherlands', value: '1', flag: 'nl'},
+                {text: 'Localization Germany', value: '2', flag: 'de'},
+                {text: 'Localization Belgium', value: '3', flag: 'be'},
+                {text: 'Localization Spain', value: '4', flag: 'es'},
+                {text: 'Localization France', value: '5', flag: 'fr'},
+                {text: 'Localization United Kingdom', value: '6', flag: 'gb'}],
       workItemList: ["PBI NL-123: eat ice cream",
                     "PBI DE-123: eat chocolate",
                     "PBI NL-123: eat macaroons",
