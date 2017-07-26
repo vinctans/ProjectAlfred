@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Loader } from 'semantic-ui-react';
 
 class GridContainer extends Component {
   render() {
@@ -7,8 +8,10 @@ class GridContainer extends Component {
     );
     return (
       <div style={{
-        border: '5px solid violet'
-      }}> {pbi} </div>
+        border: '5px solid pink',
+      }}> 
+     <Loader active />
+      {pbi} </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react';
 
 class SprintSelector extends Component {
   render() {
@@ -7,12 +7,7 @@ class SprintSelector extends Component {
       <h6>{iterationPath}</h6>
     );
     return (
-      // <div>
-      // {buttonLeft}
-      // {iterationPath}
-      // {buttonRight}
-      // </div>
-      <Dropdown placeholder='Select Sprint' fluid selection options={iterationPath} />
+      <Dropdown placeholder='Select Sprint' fluid selection options={iterationPath} onClick={() => alert('hi')}/>
     );
   }
 
